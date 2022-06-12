@@ -21,19 +21,23 @@ function start() {
     ms = ms < 10 ? "0" + ms : ms;
     mili.innerHTML = ms;
     // milisecond
-    if (ms == 99) {
-      second++;
+    if (ms == 100) {
       ms = 0;
+      mili.innerHTML = "00";
+      second++;
       second = second < 10 ? "0" + second : second;
       sec.innerHTML = second;
     } //second
-    else if (second == 59) {
-      minute++;
+    else if (second == 60) {
       second = 0;
+      sec.innerHTML = "00";
+      minute++;
       minute = minute < 10 ? "0" + minute : minute;
       min.innerHTML = minute;
     } //minute
     else if (minute == 59) {
+      minute = 0;
+      min.innerHTML = "00";
       hours++;
       minute = 0;
       hours = hours < 10 ? "0" + hours : hours;
